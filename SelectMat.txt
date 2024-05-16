@@ -1,0 +1,6 @@
+-- EXERCISE 4
+--  Wording and coefficient (expressed as a percentage) of each subject
+SELECT WORDING, COEF * 100 AS "COEFFICIENT (%)" FROM MATTER;
+
+-- Sum of coefficients of all subject
+SELECT SUM(COEF) AS "SUM OF ALL COEFFICIENTS" FROM MATTER;

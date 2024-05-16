@@ -1,0 +1,144 @@
+/* EXERCISE 2
+Fill the tables with a dataset :
+
+• It takes 7 students, including 3 in the same city and 3 whose names are: Dupont, Durand,
+and Martin. It also takes 2 cities whose name contains « LL »
+*/
+INSERT INTO STUDENT(numstud, name, firstname, dateofbirth, street, postalcod, city) values ('1', 'Dupont', 'Philippe', To_Date('1980-01-02', 'YYYY-MM-DD'), 'Av da Liberdade 12', '19012', 'Lisboa');
+
+INSERT INTO STUDENT(numstud, name, firstname, dateofbirth, street, postalcod, city) values ('2', 'Durand', 'Tati', To_Date('1983-03-12', 'YYYY-MM-DD'), 'Av do Brasil 123', '1234', 'Lille');
+
+INSERT INTO STUDENT(numstud, name, firstname, dateofbirth, street, postalcod, city) values (3, 'Martin', 'Macron', To_Date('1982-04-05', 'YYYY-MM-DD'), 'Av da Republica 10', '5432', 'Lloret de mar');
+
+INSERT INTO STUDENT(numstud, name, firstname, dateofbirth, street, postalcod, city) values (4, 'Marie', 'Marcelle', To_Date('1987-04-02', 'YYYY-MM-DD'), 'Av da Turma 34', '19012', 'Braga');
+
+INSERT INTO STUDENT(numstud, name, firstname, dateofbirth, street, postalcod, city) values (5, 'Juan', 'Manel', To_Date('1993-09-15', 'YYYY-MM-DD'), 'Av do Peru 3', '4356', 'Lille');
+
+INSERT INTO STUDENT(numstud, name, firstname, dateofbirth, street, postalcod, city) values (6, 'Carlos', 'Lucas', To_Date('1990-04-22', 'YYYY-MM-DD'), 'Av da Luz 18', '7345', 'Lille');
+
+INSERT INTO STUDENT(numstud, name, firstname, dateofbirth, street, postalcod, city) values (7, 'Joana', 'Silva', To_Date('1988-07-08', 'YYYY-MM-DD'), 'Rua dos Prazeres 2', '83532', 'Porto');
+
+
+-- There must be 3 subjects with a coefficient greater than or equal to 1 and at least one of
+-- which it is greater than 1
+INSERT INTO Matter (codemat, wording, coef)
+VALUES ('SCI', 'Science', 1.5);
+
+INSERT INTO Matter (codemat, wording, coef)
+VALUES ('MATH', 'Mathematics', 1.0);
+
+INSERT INTO Matter (codemat, wording, coef)
+VALUES ('PHY', 'Physics', 1.0);
+
+/*
+INSERT INTO Matter (codemat, wording, coef)
+VALUES ('FR', 'French', 1.3);
+*/
+
+-- 5 tests are required, 3 of which have the date between 1/1/2014 and 30/6/2014 (inclusive).
+-- You also need 2 subjects with more than one test.
+INSERT INTO Test (numtest, testdate, place, codemat)
+VALUES(1, '2014-01-05', 'Lisbon', 'SCI');
+
+INSERT INTO Test (numtest, testdate, place, codemat)
+VALUES(2, '2014-01-15', 'Porto', 'MATH');
+
+INSERT INTO Test (numtest, testdate, place, codemat)
+VALUES(3, '2014-03-15', 'Lille', 'PHY');
+
+INSERT INTO Test (numtest, testdate, place, codemat)
+VALUES(4, '2015-02-20', 'Lisbon', 'MATH');
+
+INSERT INTO Test (numtest, testdate, place, codemat)
+VALUES(5, '2015-05-25', 'Porto', 'PHY');
+
+/*
+INSERT INTO Test (numtest, testdate, place, codemat)
+VALUES(6, '2016-01-05', 'Braga', 'FR');
+*/
+
+-- 30 marks are required, 18 of which are greater than or equal to 10, 2 equal to 20, and 2 tests
+-- with 2 different subjects and less than 6 students marked per test
+-- test 1
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (1, 1, 15.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (2, 1, 18.0);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (3, 1, 12.0);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (4, 1, 4.6);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (5, 1, 17.0);
+
+-- test 2
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (7, 2, 8.0);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (1, 2, 19.0);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (2, 2, 11.0);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (3, 2, 7.0);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (4, 2, 20.0);
+
+-- test 3
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (6, 3, 5.0);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (7, 3, 16.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (4, 3, 12.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (2, 3, 12.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (3, 3, 9.0);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (1, 3, 9.3);
+
+-- test 4
+INSERT INTO Notation (numstud, numtest, score)
+VALUES(1, 4, 14.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (2, 4, 18.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (3, 4, 12.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (4, 4, 10.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (5, 4, 12.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (6, 4, 18.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (7, 4, 8.2);
+
+-- test 5
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (4, 5, 7.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (5, 5, 16.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES(1, 5, 14.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (2, 5, 20.0);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (3, 5, 9.0);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (7, 5, 16.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (6, 5, 7.1);
+
+-- test 6
+/*
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (7, 6, 16.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES(1, 6, 8.2);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (2, 6, 18.5);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (3, 6, 9.3);
+INSERT INTO Notation (numstud, numtest, score)
+VALUES (2, 6, 7.1);
+*/

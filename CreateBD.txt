@@ -1,0 +1,54 @@
+-- EXERCISE 1 - We must build all the tables constituting the following relational model
+
+/*
+Matter (codemat, wording, coef)
+Student (numstud, name, firsname, dateofbirth, street, postalcod, city)
+Test (numtest, testdate, place codemat)
+Notation ( numstud , numtest, score)
+The underlined columns are to be declared in primary key. The bold columns are foreign keys.
+For that, produce the text file, CreateBD.txt, containing the SQL orders allowing the creation of the
+database and the corresponding tables
+*/
+----- ************** ------
+
+-- database creation
+CREATE DATABASE SCHOOL;
+
+
+----- ************** ------
+
+-- tables creation
+CREATE TABLE STUDENT(
+    numstud INT PRIMARY KEY,
+    name VARCHAR(200),
+    firstname VARCHAR(100),
+    dateofbirth DATE,
+    street VARCHAR(200),
+    postalcod VARCHAR(50),
+    city VARCHAR(100)
+);
+
+CREATE TABLE Matter (
+    codemat VARCHAR(255) PRIMARY KEY,
+    wording VARCHAR(255),
+    coef FLOAT
+);
+
+-- codemat IS FOREIGN KEY
+CREATE TABLE TEST(
+    numtest INT PRIMARY KEY,
+    testdate DATE,
+    place VARCHAR(255),
+    codemat VARCHAR(255),
+    FOREIGN KEY (codemat) REFERENCES Matter(codemat)
+);
+
+-- numstud and numtest are FOREIGN KEY
+CREATE TABLE Notation (
+    numstud INT,
+    numtest INT,
+    score FLOAT,
+    PRIMARY KEY (numstud, numtest),
+    FOREIGN KEY (numstud) REFERENCES Student(numstud),
+    FOREIGN KEY (numtest) REFERENCES Test(numtest)
+);
